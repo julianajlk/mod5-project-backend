@@ -13,8 +13,13 @@ class UsersController < ApplicationController
     render json: @user
   end
 
+  def update
+    @user.update(user_params)
+    render json: @user
+  end
+
   private
   def user_params
-    params.require(:user).permit(:name, :email, :organizationable)
+    params.require(:user).permit(:name, :email, :organizationable_id, :organizationable_type)
   end
 end
