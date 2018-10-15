@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :find_user, only: [:show, :update, :destroy]
+
   def index
     @users = User.all
     render json: @users
@@ -18,7 +20,15 @@ class UsersController < ApplicationController
     render json: @user
   end
 
+  def destroy
+    @user.destroy
+  end
+
   private
+  def find_user
+    @user = User.find(params[:id])
+  end
+
   def user_params
     params.require(:user).permit(:name, :email, :organizationable_id, :organizationable_type)
   end
