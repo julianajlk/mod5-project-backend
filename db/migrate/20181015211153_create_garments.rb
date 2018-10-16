@@ -2,6 +2,7 @@ class CreateGarments < ActiveRecord::Migration[5.2]
   def change
     create_table :garments do |t|
       t.string :name
+      # t.integer :brand_id
       t.string :image_url
       t.string :category
       t.string :season
@@ -13,7 +14,7 @@ class CreateGarments < ActiveRecord::Migration[5.2]
       t.text :measurement
       t.text :fit_comment
       t.text :comment
-      # t.belongs_to :brand, foreign_key: true
+      t.belongs_to :brand, foreign_key: true
 
       t.timestamps
     end

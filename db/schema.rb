@@ -34,8 +34,10 @@ ActiveRecord::Schema.define(version: 2018_10_15_211153) do
     t.text "measurement"
     t.text "fit_comment"
     t.text "comment"
+    t.bigint "brand_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_garments_on_brand_id"
   end
 
   create_table "suppliers", force: :cascade do |t|
@@ -54,4 +56,5 @@ ActiveRecord::Schema.define(version: 2018_10_15_211153) do
     t.index ["organizationable_type", "organizationable_id"], name: "index_users_on_organizationable_type_and_organizationable_id"
   end
 
+  add_foreign_key "garments", "brands"
 end
