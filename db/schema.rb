@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2018_10_15_211153) do
 
   create_table "brands", force: :cascade do |t|
     t.string "name"
+    t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -29,7 +30,10 @@ ActiveRecord::Schema.define(version: 2018_10_15_211153) do
     t.string "location"
     t.string "status"
     t.string "fabrication"
-    t.text "trim"
+    t.integer "trim_button"
+    t.integer "trim_label"
+    t.integer "trim_zipper"
+    t.integer "trim_hangtag"
     t.string "sizing"
     t.text "measurement"
     t.text "fit_comment"
@@ -42,6 +46,7 @@ ActiveRecord::Schema.define(version: 2018_10_15_211153) do
 
   create_table "suppliers", force: :cascade do |t|
     t.string "name"
+    t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -49,6 +54,13 @@ ActiveRecord::Schema.define(version: 2018_10_15_211153) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.string "picture"
+    t.string "picture_thumb"
+    t.string "dob"
+    t.string "phone"
+    t.string "location"
+    t.string "position"
+    t.string "department"
     t.integer "organizationable_id"
     t.string "organizationable_type"
     t.datetime "created_at", null: false

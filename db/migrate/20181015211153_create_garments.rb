@@ -9,7 +9,10 @@ class CreateGarments < ActiveRecord::Migration[5.2]
       t.string :location
       t.string :status
       t.string :fabrication
-      t.text :trim
+      t.integer :trim_button
+      t.integer :trim_label
+      t.integer :trim_zipper
+      t.integer :trim_hangtag
       t.string :sizing
       t.text :measurement
       t.text :fit_comment
