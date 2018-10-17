@@ -14,6 +14,8 @@ class CreateGarments < ActiveRecord::Migration[5.2]
       t.integer :trim_zipper
       t.integer :trim_hangtag
       t.string :sizing
+      # save as an array
+      # t.string :sizing, array: true, default: []
       t.text :measurement
       t.text :fit_comment
       t.text :comment
