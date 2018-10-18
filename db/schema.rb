@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2018_10_17_144911) do
     t.text "measurement"
     t.text "fit_comment"
     t.text "comment"
+    t.string "url"
     t.bigint "brand_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

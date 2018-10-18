@@ -19,6 +19,8 @@ class CreateGarments < ActiveRecord::Migration[5.2]
       t.text :measurement
       t.text :fit_comment
       t.text :comment
+      t.string :url
+      
       t.belongs_to :brand, foreign_key: true
 
       t.timestamps
