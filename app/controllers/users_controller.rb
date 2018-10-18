@@ -11,19 +11,39 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
-    # @user.picture.attach(params[:picture])
-    render json: @user
-
+    @user = User.new(user_params)
+    #url_for transforms the blob that was created when the user was created into an url, which is added to @user. 
+    @user.url = url_for(@user.avatar.attachment.blob)
+    if @user.save
+      render json: @user, status: :accepted
+    else
+      render json: {errors: @user.errors.full_message}, status: :unprocessible_entity
+    end
   end
+
+#create method for when using both createUser() and uploadAvatar() to separately first create the user, then add the avatar on a patch/update in my actions.js
+  # def create
+  #   @user = User.create(user_params)
+  #   if @user.save
+  #     render json: @user, status: :accepted
+  #   else
+  #     render json: {errors: @user.errors.full_message}, status: :unprocessible_entity
+  #   end
+  # end
 
   def update
     @user.update(user_params)
-    render json: @user
+    @user.url = url_for(@user.avatar.attachment.blob)
+    if @user.save
+      render json: @user, status: :accepted
+    else
+      render json: {errors: @user.errors.full_message}, status: :unprocessible_entity
+    end
   end
 
   def destroy
-    @user.destroy
+    User.find(params[:id]).avatar.purge
+    render json: User.find(params[:id]).destroy
   end
 
   private
@@ -32,6 +52,10 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :picture, :dob, :phone, :location, :position, :department, :organizationable_id, :organizationable_type)
+    #require(:user) needs a key :user
+    params.permit(:name, :email, :avatar, :url, :dob, :phone, :location, :position, :department, :organizationable_id, :organizationable_type)
+
+    # params.require(:user).permit(:name, :email, :avatar, :url, :picture, :dob, :phone, :location, :position, :department, :organizationable_id, :organizationable_type)
+
   end
 end

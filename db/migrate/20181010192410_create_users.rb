@@ -10,7 +10,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :location
       t.string :position
       t.string :department
-
+      t.string :url
+      
       t.integer :organizationable_id
       t.string :organizationable_type
 

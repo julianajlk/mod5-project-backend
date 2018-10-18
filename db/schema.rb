@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 2018_10_17_144911) do
     t.string "location"
     t.string "position"
     t.string "department"
+    t.string "url"
     t.integer "organizationable_id"
     t.string "organizationable_type"
     t.datetime "created_at", null: false
