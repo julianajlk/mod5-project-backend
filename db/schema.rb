@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2018_10_17_144911) do
 
   create_table "garments", force: :cascade do |t|
     t.string "name"
-    t.string "image_url"
+    t.string "file_upload"
     t.string "category"
     t.string "season"
     t.string "location"
@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 2018_10_17_144911) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "picture"
+    t.string "file_upload"
     t.string "picture_thumb"
     t.string "dob"
     t.string "phone"

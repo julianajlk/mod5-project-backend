@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    #url_for transforms the blob that was created when the user was created into an url, which is added to @user. 
+    #url_for transforms the blob that was created when the user was created into an url, which is added to @user.
     @user.url = url_for(@user.avatar.attachment.blob)
     if @user.save
       render json: @user, status: :accepted
@@ -52,10 +52,8 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    #require(:user) needs a key :user
+    #require(:user) means needs a key :user
     params.permit(:name, :email, :avatar, :url, :dob, :phone, :location, :position, :department, :organizationable_id, :organizationable_type)
-
-    # params.require(:user).permit(:name, :email, :avatar, :url, :picture, :dob, :phone, :location, :position, :department, :organizationable_id, :organizationable_type)
 
   end
 end

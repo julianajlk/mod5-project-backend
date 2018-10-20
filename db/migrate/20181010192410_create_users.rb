@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
     create_table :users do |t|
       t.string :name
       t.string :email
-      t.string :picture
+      t.string :file_upload
       t.string :picture_thumb
       t.string :dob
       t.string :phone
@@ -11,7 +11,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :position
       t.string :department
       t.string :url
-      
+
       t.integer :organizationable_id
       t.string :organizationable_type
 
