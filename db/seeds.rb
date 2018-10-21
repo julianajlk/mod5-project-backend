@@ -26,7 +26,6 @@ User.create(name: "Roger", email: "roger.berger@example.com", url: "https://rand
 
 User.create(name: "Jenifer", email: "jenifer.deveen@example.com", url: "https://randomuser.me/api/portraits/women/95.jpg", picture_thumb: "https://randomuser.me/api/portraits/thumb/women/95.jpg", dob: "1996-11-05", phone: "(009)183-3862", location: "Florence, Italy", position: "Fabric Manager", department: "Fabric Reasearch and Development", organizationable_id: 3, organizationable_type: "Supplier")
 
-
 Garment.create(brand_id: 1, name: "Havana Trench Coat", url: "https://as1.ftcdn.net/jpg/01/97/44/26/500_F_197442683_ZqvLvKM8mt3keqzXdNHCZ8YNTq4fmJTC.jpg", category: "Outerwear", season: "Cruise 2019", location: "China", status: "1st Stock Sample", fabrication: "100% Cotton Washed Canvas", trim_button: 3, trim_label: 1, trim_zipper: 1, trim_hangtag: 1, sizing: "XXS-XXL", measurement: "Body Length From Center Back Neck: 33 inches, Shell Inseam: 12 inches, Pocket: 5 inches, Elbow Patches Placement from shoulder: 2 inches", fit_comment: "Button holes be made 1/8 inch larger, as the Buttons have already been ordered", comment: "Wash approved as per 1st Factory Stock Sample")
 
 Garment.create(brand_id: 2, name: "Dakota Skirt", url: "https://petiterepublic.files.wordpress.com/2010/11/000001753158.jpeg", category: "Bottoms", season: "Spring 2020", location: "Sri Lanka", status: "2nd Stock Sample", fabrication: "Silk Jacquard", trim_button: 8, trim_label: 1, trim_zipper: 2, trim_hangtag: 1, sizing: "S-L", measurement: "Body Length From Center Back Neck: 42 inches, Sleeve Opening: 12 inches", fit_comment: "Sleeve Length revised to be 33 1/4 inches", comment: "Please attach all buttons securely. Factory to test each button to ensure functionality")
@@ -38,3 +37,16 @@ Material.create(supplier_id: 2, name: "Washed Canvas", item_number: "1231", cate
 Material.create(supplier_id: 3, name: "Silver Invisible Zipper", item_number: "1232", category: "trim", size: "12 inches", quantity: 1, color: "Black", usage: "Side seam", comment: "Zipper should be placed 2 inches from waist")
 Material.create(supplier_id: 1, name: "Corozo Button", item_number: "1233", category: "trim", size: "", quantity: 1, color: "Caramel", usage: "At center front, at each cuff", comment: "1 extra button")
 Material.create(supplier_id: 2, name: "Silk Charmeuse", item_number: "1234", category: "fabric", size: "43 inches", quantity: 1, color: "Off White", usage: "Shell and lining", comment: "100% silk")
+
+GarmentMaterial.create(garment_id: 1, material_id: 1)
+GarmentMaterial.create(garment_id: 1, material_id: 2)
+GarmentMaterial.create(garment_id: 1, material_id: 3)
+GarmentMaterial.create(garment_id: 1, material_id: 4)
+GarmentMaterial.create(garment_id: 1, material_id: 5)
+GarmentMaterial.create(garment_id: 2, material_id: 1)
+GarmentMaterial.create(garment_id: 2, material_id: 2)
+GarmentMaterial.create(garment_id: 2, material_id: 3)
+GarmentMaterial.create(garment_id: 2, material_id: 4)
+GarmentMaterial.create(garment_id: 3, material_id: 1)
+GarmentMaterial.create(garment_id: 3, material_id: 2)
+GarmentMaterial.create(garment_id: 3, material_id: 3)

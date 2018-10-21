@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :garment_materials
   resources :materials
   resources :garments
   resources :suppliers

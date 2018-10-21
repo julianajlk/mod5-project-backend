@@ -2,7 +2,6 @@ class CreateGarments < ActiveRecord::Migration[5.2]
   def change
     create_table :garments do |t|
       t.string :name
-      # t.integer :brand_id
       t.string :file_upload
       t.string :category
       t.string :season

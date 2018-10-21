@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_20_173748) do
+ActiveRecord::Schema.define(version: 2018_10_21_190127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 2018_10_20_173748) do
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "garment_materials", force: :cascade do |t|
+    t.bigint "material_id"
+    t.bigint "garment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["garment_id"], name: "index_garment_materials_on_garment_id"
+    t.index ["material_id"], name: "index_garment_materials_on_material_id"
   end
 
   create_table "garments", force: :cascade do |t|
@@ -107,6 +116,8 @@ ActiveRecord::Schema.define(version: 2018_10_20_173748) do
     t.index ["organizationable_type", "organizationable_id"], name: "index_users_on_organizationable_type_and_organizationable_id"
   end
 
+  add_foreign_key "garment_materials", "garments"
+  add_foreign_key "garment_materials", "materials"
   add_foreign_key "garments", "brands"
   add_foreign_key "materials", "suppliers"
 end
