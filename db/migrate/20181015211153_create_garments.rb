@@ -8,10 +8,6 @@ class CreateGarments < ActiveRecord::Migration[5.2]
       t.string :location
       t.string :status
       t.string :fabrication
-      t.integer :trim_button
-      t.integer :trim_label
-      t.integer :trim_zipper
-      t.integer :trim_hangtag
       t.string :sizing
       # save as an array
       # t.string :sizing, array: true, default: []
