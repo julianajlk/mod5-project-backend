@@ -93,10 +93,5 @@ class GarmentsController < ApplicationController
     # no .require(:garment) bc of upload
     params.permit(:id, :brand_id, :materialsIds, :cover_upload, :url, :name, :image_url, :category, :season, :location, :status, :fabrication, :sizing, :measurement, :fit_comment, :comment)
 
-    # params.permit(:id, :brand_id, :materialsIds, :cover_upload, :url, :name, :image_url, :category, :season, :location, :status, :fabrication, :sizing, :measurement, :fit_comment, :comment, materials_attributes: [Material.find(@garment.materialsIds)])
-
-    # materials_attributes: [:name, :item_number, :category, :size, :quantity, :color, :usage, :price, :comment, :supplier_id])
-
-# Material.find(materialId)
   end
 end
