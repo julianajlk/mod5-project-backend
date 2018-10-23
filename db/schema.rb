@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2018_10_21_190127) do
     t.string "file_upload"
     t.string "category"
     t.string "season"
+    t.integer "rate"
     t.string "location"
     t.string "status"
     t.string "fabrication"
