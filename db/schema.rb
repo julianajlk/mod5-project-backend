@@ -60,15 +60,12 @@ ActiveRecord::Schema.define(version: 2018_10_21_190127) do
     t.string "location"
     t.string "status"
     t.string "fabrication"
-    t.integer "trim_button"
-    t.integer "trim_label"
-    t.integer "trim_zipper"
-    t.integer "trim_hangtag"
     t.string "sizing"
     t.text "measurement"
     t.text "fit_comment"
     t.text "comment"
     t.string "url"
+    t.string "materialsIds"
     t.bigint "brand_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

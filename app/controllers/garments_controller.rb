@@ -10,18 +10,23 @@ class GarmentsController < ApplicationController
     render json: @garment
   end
 
-  def create
-    @garment = Garment.new(garment_params)
-    @garment.url = url_for(@garment.cover_upload.attachment.blob)
-    # byebug
-    if @garment.save
-      render json: @garment
-    else
-      render json: {error: @garment.errors}, status: :unprocessable_entity
-      #console logs the error 422
-      #status: 422
-    end
-  end
+  # def create
+  #   @garment = Garment.new(garment_params)
+  #
+  #   if @garment.materialsIds.present?
+  #     #   look up materials with this id
+  #     @material.find(@garment.materialsIds)
+  #   end
+  #   @garment.url = url_for(@garment.cover_upload.attachment.blob)
+  #   # byebug
+  #   if @garment.save
+  #     render json: @garment
+  #   else
+  #     render json: {error: @garment.errors}, status: :unprocessable_entity
+  #     #console logs the error 422
+  #     #status: 422
+  #   end
+  # end
 
 #create method before changed code to add upload
   # def create
@@ -37,30 +42,36 @@ class GarmentsController < ApplicationController
   #   end
   # end
 
-# bug to fix: update method w/o cover_upload not working
-  # def update
-  #   if @garment.cover_upload.attachment.blob == nil
-  #     @garment.update(garment_params)
-  #     if @garment.save
-  #       render json: @garment, status: :accepted
-  #     else
-  #       render json: {errors: @garment.errors.full_message}, status: :unprocessible_entity
-  #     end
-  #   else
-  #     @garment.update(garment_params)
-  #     @garment.url = url_for(@garment.cover_upload.attachment.blob)
-  #     if @garment.save
-  #       render json: @garment, status: :accepted
-  #     else
-  #       render json: {errors: @garment.errors.full_message}, status: :unprocessible_entity
-  #     end
-  #   end
-  # end
+  def create
+    #create new garment
+    @garment = Garment.new(garment_params)
+      #create upload url
+    @garment.url = url_for(@garment.cover_upload.attachment.blob)
+
+    #iterate over params[:materialsIds]
+        #for each material id, create a new GarmentMaterial with @garment.id
+    materialsIdsArray = garment_params["materialsIds"].split(',')
+    materialsIdsArray.each {|m| @garment_material = GarmentMaterial.create(garment_id: @garment.id, material_id: m.to_i)}
+
+    if @garment.save
+      #map over the same array and find each material with each id
+      new_materials =
+      materialsIdsArray.map {|m| Material.find_by(id: m.to_i)}
+        #need to set materials to @garment
+      @garment.materials = new_materials
+      render json: @garment
+    else
+      render json: {error: @garment.errors}, status: :unprocessable_entity
+    end
+  end
 
   # update when upload image is true
   def update
     @garment.update!(garment_params)
-    @garment.url = url_for(@garment.cover_upload.attachment.blob)
+      # condition for not having an uploaded file (opposite: .blank?)
+    if @garment.cover_upload.attachment.present?
+      @garment.url = url_for(@garment.cover_upload.attachment.blob)
+    end
     if @garment.save
       render json: @garment, status: :accepted
     else
@@ -79,7 +90,13 @@ class GarmentsController < ApplicationController
   end
 
   def garment_params
-    # no .require(:garment) bc of upload 
-    params.permit(:id, :brand_id, :cover_upload, :url, :name, :image_url, :category, :season, :location, :status, :fabrication, :sizing, :measurement, :fit_comment, :comment)
+    # no .require(:garment) bc of upload
+    params.permit(:id, :brand_id, :materialsIds, :cover_upload, :url, :name, :image_url, :category, :season, :location, :status, :fabrication, :sizing, :measurement, :fit_comment, :comment)
+
+    # params.permit(:id, :brand_id, :materialsIds, :cover_upload, :url, :name, :image_url, :category, :season, :location, :status, :fabrication, :sizing, :measurement, :fit_comment, :comment, materials_attributes: [Material.find(@garment.materialsIds)])
+
+    # materials_attributes: [:name, :item_number, :category, :size, :quantity, :color, :usage, :price, :comment, :supplier_id])
+
+# Material.find(materialId)
   end
 end

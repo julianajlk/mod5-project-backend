@@ -15,6 +15,7 @@ class CreateGarments < ActiveRecord::Migration[5.2]
       t.text :fit_comment
       t.text :comment
       t.string :url
+      t.string :materialsIds
 
       t.belongs_to :brand, foreign_key: true
 
