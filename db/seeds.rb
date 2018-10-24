@@ -10,21 +10,22 @@ Brand.create(name: "Ralph Lauren", location: "New York, NY")
 Brand.create(name: "Marc Jacobs", location: "New York, NY")
 Brand.create(name: "Tory Burch", location: "Los Angeles, CA")
 
-Supplier.create(name: "Buttondowns Forever", location: "China")
-Supplier.create(name: "Pants & All", location: "Sri Lanka")
-Supplier.create(name: "Wellmade Incorporated", location: "Bangladesh")
+Supplier.create(name: "Buttondowns Forever", location: "Shenzhen, China", map_url: "https://maps.googleapis.com/maps/api/staticmap?center=Shenzhen&zoom=13&scale=1&size=300x450&maptype=roadmap&key=AIzaSyBTd4sjbFbrazbXX0xgF3pYCf-KY1zfM40&format=png&visual_refresh=true" )
+Supplier.create(name: "Pants & All", location: "Blumenau, Brazil", map_url: "https://maps.googleapis.com/maps/api/staticmap?center=Blumenau&zoom=13&scale=1&size=300x450&maptype=roadmap&key=AIzaSyBTd4sjbFbrazbXX0xgF3pYCf-KY1zfM40&format=png&visual_refresh=true")
+Supplier.create(name: "Wellmade Inc", location: "Dhaka, Bangladesh", map_url: "https://maps.googleapis.com/maps/api/staticmap?center=Dhaka,+Bangladesh&zoom=13&scale=1&size=300x450&maptype=roadmap&key=AIzaSyBTd4sjbFbrazbXX0xgF3pYCf-KY1zfM40&format=png&visual_refresh=true")
+Supplier.create(name: "XYZippers", location: "Los Angeles, USA", map_url: "https://maps.googleapis.com/maps/api/staticmap?center=Los+Angeles&zoom=13&scale=1&size=300x450&maptype=roadmap&key=AIzaSyBTd4sjbFbrazbXX0xgF3pYCf-KY1zfM40&format=png&visual_refresh=true")
 
-User.create(name: "Marcela", email: "marcela.vieira@example.com", url: "https://randomuser.me/api/portraits/women/11.jpg", picture_thumb: "https://randomuser.me/api/portraits/thumb/women/11.jpg", dob: "1950-06-08", phone: "(461)715-3032", location: "USA", position: "Technical Designer", department: "Product Development", organizationable_id: 1, organizationable_type: "Brand")
+User.create(name: "Marcela", about: "@marcelaelaela", email: "marcela.vieira@example.com", url: "https://randomuser.me/api/portraits/women/11.jpg", dob: "1950-06-08", phone: "(461)715-3032", location: "USA", position: "Technical Designer", department: "Product Development", organizationable_id: 1, organizationable_type: "Brand")
 
-User.create(name: "Candice", email: "candice.hernandez@example.com", url: "https://randomuser.me/api/portraits/women/30.jpg", picture_thumb: "https://randomuser.me/api/portraits/thumb/women/30.jpg", dob: "1966-10-23", phone: "(518)-401-2341", location: "Los Angeles, CA", position: "Designer", department: "Design", organizationable_id: 2, organizationable_type: "Brand")
+User.create(name: "Candice", about: "Graphic Designer learning to code", email: "candice.hernandez@example.com", url: "https://randomuser.me/api/portraits/women/30.jpg", dob: "1966-10-23", phone: "(518)-401-2341", location: "Los Angeles, CA", position: "Designer", department: "Design", organizationable_id: 2, organizationable_type: "Brand")
 
-User.create(name: "Frederik", email: "frederik.christensen@example.com", url: "https://randomuser.me/api/portraits/men/41.jpg", picture_thumb: "https://randomuser.me/api/portraits/thumb/men/41.jpg", dob: "1958-11-30", phone: "(310)345-3890", location: "Sweden", position: "Fabric Manager", department: "Design", organizationable_id: 3, organizationable_type: "Brand")
+User.create(name: "Frederik", about: "@iamfrederik", email: "frederik.christensen@example.com", url: "https://randomuser.me/api/portraits/men/41.jpg", dob: "1958-11-30", phone: "(310)345-3890", location: "Sweden", position: "Fabric Manager", department: "Design", organizationable_id: 3, organizationable_type: "Brand")
 
-User.create(name: "Christl", email: "christl.grund@example.com", url: "https://randomuser.me/api/portraits/women/57.jpg", picture_thumb: "https://randomuser.me/api/portraits/thumb/women/57.jpg", dob: "1986-10-27", phone: "(510)583-2346", location: "New York, NY", position: "Senior Designer", department: "Design", organizationable_id: 1, organizationable_type: "Supplier")
+User.create(name: "Christl", about: "@chrischris", email: "christl.grund@example.com", url: "https://randomuser.me/api/portraits/women/57.jpg", dob: "1986-10-27", phone: "(510)583-2346", location: "New York, NY", position: "Senior Designer", department: "Design", organizationable_id: 1, organizationable_type: "Supplier")
 
-User.create(name: "Roger", email: "roger.berger@example.com", url: "https://randomuser.me/api/portraits/men/14.jpg", picture_thumb: "https://randomuser.me/api/portraits/thumb/men/14.jpg", dob: "1960-09-15", phone: "(150)743-5763", location: "China", position: "Quality Control Manager", department: "Production", organizationable_id: 2, organizationable_type: "Supplier")
+User.create(name: "Roger", about: "Former attorney, find me @rogerisroger", email: "roger.berger@example.com", url: "https://randomuser.me/api/portraits/men/14.jpg", dob: "1960-09-15", phone: "(150)743-5763", location: "China", position: "Quality Control Manager", department: "Production", organizationable_id: 2, organizationable_type: "Supplier")
 
-User.create(name: "Jenifer", email: "jenifer.deveen@example.com", url: "https://randomuser.me/api/portraits/women/95.jpg", picture_thumb: "https://randomuser.me/api/portraits/thumb/women/95.jpg", dob: "1996-11-05", phone: "(009)183-3862", location: "Florence, Italy", position: "Fabric Manager", department: "Fabric Reasearch and Development", organizationable_id: 3, organizationable_type: "Supplier")
+User.create(name: "Jenifer", about: "@thisisjen", email: "jenifer.deveen@example.com", url: "https://randomuser.me/api/portraits/women/95.jpg", dob: "1996-11-05", phone: "(009)183-3862", location: "Florence, Italy", position: "Fabric Manager", department: "Fabric Reasearch and Development", organizationable_id: 3, organizationable_type: "Supplier")
 
 Garment.create(brand_id: 1, name: "Havana Trench Coat", url: "https://as1.ftcdn.net/jpg/01/97/44/26/500_F_197442683_ZqvLvKM8mt3keqzXdNHCZ8YNTq4fmJTC.jpg", category: "Outerwear", season: "Cruise 2019", rate: 1, location: "China", status: "1st Stock Sample", fabrication: "100% Cotton Washed Canvas", sizing: "XXS-XXL", measurement: "Body Length: 33 1/2, Shell Inseam: 12 5/6, Pocket: W: 5 x H: 2, Elbow Patches Placement from shoulder: 2 1/2", fit_comment: "Button holes to be made 1/8 inch larger, as the Buttons have already been ordered", comment: "Wash approved as per 1st Factory Stock Sample")
 

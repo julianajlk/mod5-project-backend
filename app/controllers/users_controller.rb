@@ -53,7 +53,7 @@ class UsersController < ApplicationController
 
   def user_params
     #require(:user) means needs a key :user
-    params.permit(:name, :email, :avatar, :url, :dob, :phone, :location, :position, :department, :organizationable_id, :organizationable_type)
+    params.permit(:name, :about, :email, :avatar, :url, :dob, :phone, :location, :position, :department, :organizationable_id, :organizationable_type)
 
   end
 end
