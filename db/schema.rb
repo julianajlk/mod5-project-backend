@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 2018_10_21_190127) do
     t.text "usage"
     t.string "price"
     t.text "comment"
+    t.string "image_url"
     t.bigint "supplier_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -93,6 +94,9 @@ ActiveRecord::Schema.define(version: 2018_10_21_190127) do
     t.string "name"
     t.string "location"
     t.string "map_url"
+    t.string "phone"
+    t.integer "employees"
+    t.integer "established"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

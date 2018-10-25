@@ -10,6 +10,7 @@ class CreateMaterials < ActiveRecord::Migration[5.2]
       t.text :usage
       t.string :price
       t.text :comment
+      t.string :image_url
       t.belongs_to :supplier, foreign_key: true
       t.timestamps
     end

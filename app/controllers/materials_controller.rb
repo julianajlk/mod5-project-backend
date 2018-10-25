@@ -21,7 +21,7 @@ class MaterialsController < ApplicationController
 
   private
   def material_params
-    params.require(:material).permit(:supplier_id, :name, :item_number, :category, :size, :quantity, :color, :usage, :price, :comment)
+    params.require(:material).permit(:supplier_id, :name, :item_number, :category, :size, :quantity, :color, :usage, :price, :comment, :image_url)
   end
 
 end
