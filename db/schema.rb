@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2018_10_21_190127) do
     t.string "file_upload"
     t.string "category"
     t.string "season"
-    t.integer "rate"
+    t.boolean "approved"
     t.string "location"
     t.string "status"
     t.string "fabrication"
@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 2018_10_21_190127) do
 
   create_table "suppliers", force: :cascade do |t|
     t.string "name"
+    t.string "category"
     t.string "location"
     t.string "map_url"
     t.string "phone"

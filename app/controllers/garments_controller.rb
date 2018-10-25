@@ -91,7 +91,7 @@ class GarmentsController < ApplicationController
 
   def garment_params
     # no .require(:garment) bc of upload
-    params.permit(:id, :brand_id, :materialsIds, :cover_upload, :url, :name, :image_url, :category, :season, :rate, :location, :status, :fabrication, :sizing, :measurement, :fit_comment, :comment)
+    params.permit(:id, :brand_id, :materialsIds, :cover_upload, :url, :name, :image_url, :category, :season, :approved, :location, :status, :fabrication, :sizing, :measurement, :fit_comment, :comment)
 
   end
 end

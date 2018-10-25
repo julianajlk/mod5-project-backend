@@ -5,7 +5,7 @@ class CreateGarments < ActiveRecord::Migration[5.2]
       t.string :file_upload
       t.string :category
       t.string :season
-      t.integer :rate
+      t.boolean :approved
       t.string :location
       t.string :status
       t.string :fabrication
