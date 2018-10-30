@@ -1,24 +1,35 @@
-# README
+# APParel
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Product Manufacturing App for the best communication between brands and suppliers in the Fashion Industry.
 
-Things you may want to cover:
+######Flatiron School Software Engineering Immersive - Final Project
 
-* Ruby version
+![Demo](https://github.com/https://github.com/julianajlk/mod5-project-backend/src/images/APParel_demo.gif)
 
-* System dependencies
+See the video demo <a href="https://vimeo.com/297743976
+">here</a>
 
-* Configuration
+###Built with
 
-* Database creation
+- [Rails](https://github.com/rails/rails)
+- Ruby version:
+  ruby 2.3.3p222 (2016-11-21 revision 56859) [x86_64-darwin17]
 
-* Database initialization
+![alt text](https://github.com/https://github.com/julianajlk/mod5-project-frontend/src/images/APParel_4.png "APParel JSON data")
 
-* How to run the test suite
+FEATURES:
 
-* Services (job queues, cache servers, search engines, etc.)
+- User (brand or supplier) can sign up
+- Brand has many and can create/edit Garments
+- Garments can be searched by name and sorted by name/season/category
+- Materials can be searched by name and sorted by category/price/supplier
 
-* Deployment instructions
+To run this app
+`rake db:create db:migrate db:seed`
+`rails s`
 
-* ...
+---
+
+_[Frontend](https://github.com/julianajlk/mod5-project-frontend)_
+
+**[Blog post about this project](https://medium.com/@julianajlk/flatiron-school-final-project-part-1-7e1a388d3560)**
